@@ -13,7 +13,6 @@
 
 require('settings')
 require('tree-config')
-require('colorschemes-config.nightfox')
 require('keymaps')
 require('packer-config')
 require('lsp-config.language-servers')
@@ -29,4 +28,10 @@ require('telescope-config')
 require('comment-config')
 require('indent-config')
 --require('treesitter-config') --> Error: verify your Internet conection...
+
+
+
+
 --require('colorschemes-config.gruvbox')
+--require('colorschemes-config.nightfox')
+require('colorschemes-config.tokyo')

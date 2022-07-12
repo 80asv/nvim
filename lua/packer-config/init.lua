@@ -16,6 +16,7 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
     use 'morhetz/gruvbox'
     use 'EdenEast/nightfox.nvim'
+    use 'folke/tokyonight.nvim'
 
 	-- Nvim-Tree
 	use {
