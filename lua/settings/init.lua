@@ -21,13 +21,17 @@ set.encoding='utf-8'
 set.guifont = "Cascadia Code"
 set.clipboard = "unnamedplus"
 set.termguicolors = true
+set.foldmethod="indent"
+set.foldlevel=99
 
-
-
-
- vim.api.nvim_command([[
+vim.api.nvim_command([[
     augroup remember_folds
         autocmd BufLeave ?* mkview 1
         autocmd BufEnter ?* silent! loadview 1
     augroup END
 ]])
+
+
+
+
+vim.cmd("set nofoldenable")

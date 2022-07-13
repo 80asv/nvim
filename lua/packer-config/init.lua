@@ -76,6 +76,17 @@ return require('packer').startup(function()
   		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    use {
+        "ahmedkhalf/project.nvim",
+        config = function()
+            require("project_nvim").setup {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    end
+    }
+
 
 	-- autoCloseTag (html)
 	use 'alvan/vim-closetag'
@@ -142,13 +153,13 @@ return require('packer').startup(function()
 
 
     --folding
-    -- use{ 'anuvyklack/pretty-fold.nvim',
-    -- requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
-    --     config = function()
-    --         require('pretty-fold').setup()
-    --         require('pretty-fold.preview').setup()
-    --     end
-    -- }
+    use{ 'anuvyklack/pretty-fold.nvim',
+    requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+        config = function()
+            require('pretty-fold').setup()
+            require('pretty-fold.preview').setup()
+        end
+    }
 
 
     use 'nvim-treesitter/highlight.lua'
