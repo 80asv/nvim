@@ -67,5 +67,11 @@ map('n', '<C-p>', ':Dashboard<CR>', opts)
 map('n', '<leader>y', ':"*y<CR>', opts)
 map('n', '<leader>p', ':"*p<CR>', opts)
 
-vim.g.comfortable_motion_scroll_down_key = "j"
+-- scroll
+
 vim.g.comfortable_motion_scroll_up_key = "k"
+vim.g.comfortable_motion_scroll_down_key = "j"
+
+-- map('n', 'C-f>', ':call comfortable_motion#flick(200)<CR>', opts)
+-- map('n', 'C-b>', ':call comfortable_motion#flick(-200)<CR>', opts)
+
