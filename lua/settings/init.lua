@@ -21,3 +21,13 @@ set.encoding='utf-8'
 set.guifont = "Cascadia Code"
 set.clipboard = "unnamedplus"
 set.termguicolors = true
+
+
+
+
+ vim.api.nvim_command([[
+    augroup remember_folds
+        autocmd BufLeave ?* mkview 1
+        autocmd BufEnter ?* silent! loadview 1
+    augroup END
+]])

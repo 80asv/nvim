@@ -1,7 +1,10 @@
 -- luasnip setup
 require("nvim-lsp-installer").setup {}
+require('luasnip/loaders/from_vscode').lazy_load()
 local luasnip = require 'luasnip'
 local lspkind = require('lspkind')
+
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {

@@ -50,9 +50,22 @@ map('n', '<down>', '<nop>', opts)
 map('n', '<A-j>', ':move +1<CR>', opts)
 map('n', '<A-k>', ':move -2<CR>', opts)
 
-
 --save and redo normal node
+map('i', '<C-s>', ':w<CR>', opts)
 map('n', '<C-s>', ':w<CR>', opts)
+
+-- undo redo
 map('n', '<C-z>', 'u', opts)
 map('n', '<C-y>', '<C-R>', opts)
 
+
+--dashboard
+map('n', '<C-p>', ':Dashboard<CR>', opts)
+
+
+--clipboard
+map('n', '<leader>y', ':"*y<CR>', opts)
+map('n', '<leader>p', ':"*p<CR>', opts)
+
+vim.g.comfortable_motion_scroll_down_key = "j"
+vim.g.comfortable_motion_scroll_up_key = "k"

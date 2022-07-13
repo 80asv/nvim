@@ -27,11 +27,12 @@ require('dashboard-config')
 require('telescope-config')
 require('comment-config')
 require('indent-config')
---require('treesitter-config') --> Error: verify your Internet conection...
+--require('luasnip-config')
+require('treesitter-config') --> Error: verify your Internet conection...
 
 
 
 
 --require('colorschemes-config.gruvbox')
---require('colorschemes-config.nightfox')
-require('colorschemes-config.tokyo')
+require('colorschemes-config.nightfox')
+--require('colorschemes-config.tokyo')

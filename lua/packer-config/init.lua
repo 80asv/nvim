@@ -31,9 +31,10 @@ return require('packer').startup(function()
 	use 'neovim/nvim-lspconfig'
 	use "williamboman/nvim-lsp-installer"
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   	use 'L3MON4D3/LuaSnip'
+
+  	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 
 	-- lua line
 	use {
@@ -75,8 +76,7 @@ return require('packer').startup(function()
   		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-    	use { "nvim-telescope/telescope-file-browser.nvim" }
-	
+
 	-- autoCloseTag (html)
 	use 'alvan/vim-closetag'
 	-- lspsaga
@@ -84,11 +84,11 @@ return require('packer').startup(function()
 
     -- tree-sitter
 
-    -- use {
-    --     'nvim-treesitter/nvim-treesitter',
-    --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-    -- }
-    --
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
+    
 
     -- toggle term
     use 'akinsho/toggleterm.nvim'
@@ -132,6 +132,30 @@ return require('packer').startup(function()
 
     --multicursor
     use 'terryma/vim-multiple-cursors'
+
+    --snippets
+    use "rafamadriz/friendly-snippets"
+    use 'mlaursen/vim-react-snippets'
+    use 'hrsh7th/vim-vsnip'
+
+    use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
+
+
+    --folding
+    -- use{ 'anuvyklack/pretty-fold.nvim',
+    -- requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+    --     config = function()
+    --         require('pretty-fold').setup()
+    --         require('pretty-fold.preview').setup()
+    --     end
+    -- }
+
+
+    use 'nvim-treesitter/highlight.lua'
+    use 'p00f/nvim-ts-rainbow'
+
+    -- scroll
+    use'yuttie/comfortable-motion.vim'
 end)
 
 
