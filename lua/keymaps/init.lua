@@ -18,12 +18,12 @@ vim.g.mapleader = ' '
 
 
 -- tree-config keymaps
-map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+map('n', '<leader>e', ':Neotree toggle<CR>', opts)
 
 -- bufer motion
-map('n', '<A-right>', ':BufferNext<CR>', opts)
-map('n', '<A-left>', ':BufferPrevious<CR>', opts)
-map('n', '<C-q>', ':BufferClose<CR>', opts)
+map('n', '<A-.>', ':BufferNext<CR>', opts)
+map('n', '<A-,>', ':BufferPrevious<CR>', opts)
+map('n', '<leader>q', ':BufferClose<CR>', opts)
 
 -- panels motion
 map('n', '<C-h>', ':wincmd h<CR>', opts)
@@ -31,9 +31,9 @@ map('n', '<C-l>', ':wincmd l<CR>', opts)
 
 -- hop option
 map('n', '<leader>s', ':HopWord<CR>', opts)
-map('n', '<leader>j', ':HopLine<CR>', opts)
-map('n', '<leader>f', ':HopPattern<CR>', opts)
-map('n', '<leader>d', ':HopWordCurrentLine<CR>', opts)
+-- map('n', '<leader>j', ':HopLine<CR>', opts)
+-- map('n', '<leader>f', ':HopPattern<CR>', opts)
+-- map('n', '<leader>d', ':HopWordCurrentLine<CR>', opts)
 
 -- Telescope
 map('n', '<leader>tt', ':Telescope find_files<CR>', opts)
@@ -74,4 +74,5 @@ vim.g.comfortable_motion_scroll_down_key = "j"
 
 -- map('n', 'C-f>', ':call comfortable_motion#flick(200)<CR>', opts)
 -- map('n', 'C-b>', ':call comfortable_motion#flick(-200)<CR>', opts)
+
 
