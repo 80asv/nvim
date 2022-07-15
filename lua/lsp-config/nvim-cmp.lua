@@ -1,9 +1,10 @@
+vim.g.completeopt="menu,menuone,noselect,noinsert"
+
 -- luasnip setup
 require("nvim-lsp-installer").setup {}
-require('luasnip/loaders/from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()
 local luasnip = require 'luasnip'
 local lspkind = require('lspkind')
-
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -43,13 +44,14 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'vsnip' }
   },
 }
 
 cmp.setup {
   formatting = {
     format = lspkind.cmp_format({
-	with_text = falsee,    
+	with_text = false,   
       mode = 'symbol_text', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
@@ -66,7 +68,8 @@ cmp.setup {
 
 require'cmp'.setup {
   sources = {
-    { name = 'nvim_lsp' }
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' }
   }
 }
 
@@ -78,5 +81,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
 }
+
+
 
 

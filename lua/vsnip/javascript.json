@@ -1,0 +1,118 @@
+{
+  "log": {
+    "prefix": ["cl"],
+    "body": "console.log(${1:argument})"
+  },
+  "try": {
+      "prefix": ["try"],
+      "body": [
+          "try {",
+          "\t$1",
+          "}catch(${2:err}){",
+          "\t$3",
+          "}"
+      ]
+  },
+  "Class": {
+    "prefix": ["class"],
+    "body": [
+      "/**",
+      " * @author ${VIM:\\$USER}",
+      " */",
+      "class $1 ${2:extends ${3:Parent} }{",
+      "\tconstructor() {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Class definition template."
+  },
+  "e=": {
+    "prefix": ["e="],
+    "body": "(${1:e}) => {$2}"
+  },
+  "arrowf": {
+    "prefix": ["constf"],
+    "body": "const $1 = (${2:arg}) => {${3}}"
+  },
+  "if": {
+    "prefix": ["if"],
+    "body": [
+        "if(${1:condition}){",
+        "\t$2",
+        "}"
+    ]
+  },
+  "ifelse": {
+    "prefix": ["else"],
+    "body": [
+        "if(${1:condition}){",
+        "\t$2",
+        "} else {",
+        "\t$3",
+        "}"
+    ]
+  },
+  "ifelseif": {
+    "prefix": ["elseif"],
+    "body": [
+        "if(${1:condition}){",
+        "\t$2",
+        "} else if(${3:argument}){",
+        "\t$4",
+        "}"
+    ]
+  },
+  "switch": {
+    "prefix": ["switch"],
+    "body": [
+        "switch (${1:expression}) {",
+        "\tcase '${3:case}':",
+        "\t\t${4}",
+        "\t\tbreak;",
+        "\t${0}",
+        "\tdefault",
+        "\t\t${2}"
+    ]
+  },
+  "getid": {
+    "prefix": ["get"],
+    "body": "${1:document}.getElementBy${2:Id}('${3}');" 
+  },
+  "querys": {
+    "prefix": ["qu"],
+    "body": "${1:document}.querySelector('${0:CSS selector}');" 
+  },
+  "import": {
+    "prefix": ["im"],
+    "body": "import ${1} from '${2:$1}';" 
+  },
+  "comment": {
+    "prefix": ["com"],
+    "body": "/* ${1:comment} */" 
+  },
+  "function": {
+    "prefix": ["fun"],
+    "body": [
+        "function ${1:function_name}(${2}) {",
+        "\t${3:${VISUAL}}",
+        "}"
+    ] 
+  },
+  "forEach": {
+    "prefix": ["forE"],
+    "body": "${1:object}.forEach((${2:el}) => {${3}});" 
+  },
+  "const": {
+    "prefix": ["const"],
+    "body": "const ${1:name} = ${2}" 
+  },
+  "let": {
+    "prefix": ["let"],
+    "body": "let ${1:name} = ${2}" 
+  },
+  "listener": {
+    "prefix": ["listener"],
+    "body": "${1:argument}.addEventListener('${2}', ${3});" 
+  }
+}

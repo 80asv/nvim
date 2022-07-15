@@ -28,6 +28,8 @@ map('n', '<leader>q', ':BufferClose<CR>', opts)
 -- panels motion
 map('n', '<C-h>', ':wincmd h<CR>', opts)
 map('n', '<C-l>', ':wincmd l<CR>', opts)
+map('n', '<C-j>', ':wincmd j<CR>', opts)
+map('n', '<C-k>', ':wincmd k<CR>', opts)
 
 -- hop option
 map('n', '<leader>s', ':HopWord<CR>', opts)
@@ -67,10 +69,6 @@ map('n', '<C-p>', ':Dashboard<CR>', opts)
 map('n', '<leader>y', ':"*y<CR>', opts)
 map('n', '<leader>p', ':"*p<CR>', opts)
 
--- scroll
-
-vim.g.comfortable_motion_scroll_up_key = "k"
-vim.g.comfortable_motion_scroll_down_key = "j"
 
 -- map('n', 'C-f>', ':call comfortable_motion#flick(200)<CR>', opts)
 -- map('n', 'C-b>', ':call comfortable_motion#flick(-200)<CR>', opts)

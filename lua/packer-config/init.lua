@@ -41,12 +41,15 @@ return require('packer').startup(function()
   	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   	use 'L3MON4D3/LuaSnip'
   	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-
+  	use 'hrsh7th/cmp-buffer'
+  	use 'hrsh7th/cmp-vsnip'
+  	use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
 
 	-- lua line
     use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
 
-	-- tabby
+	-- Buffers
     use {
         'romgrk/barbar.nvim',
         requires = {'kyazdani42/nvim-web-devicons'}
@@ -128,13 +131,6 @@ return require('packer').startup(function()
 
     --multicursor
     use 'terryma/vim-multiple-cursors'
-
-
-    --snippets
-    use "rafamadriz/friendly-snippets"
-    use 'mlaursen/vim-react-snippets'
-    use 'hrsh7th/vim-vsnip'
-    use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
 
     --folding

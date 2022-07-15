@@ -24,6 +24,8 @@ set.termguicolors = true
 set.foldmethod="indent"
 set.foldlevel=99
 
+
+
 vim.api.nvim_command([[
     augroup remember_folds
         autocmd BufLeave ?* mkview 1
@@ -31,7 +33,8 @@ vim.api.nvim_command([[
     augroup END
 ]])
 
-
-
-
 vim.cmd("set nofoldenable")
+vim.g.comfortable_motion_scroll_up_key = "k"
+vim.g.comfortable_motion_scroll_down_key = "j"
+vim.g.vsnip_snippet_dir = "~/.config/nvim/lua/vsnip/"
+
