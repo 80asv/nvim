@@ -23,7 +23,7 @@ map('n', '<leader>e', ':Neotree toggle<CR>', opts)
 -- bufer motion
 map('n', '<A-.>', ':BufferNext<CR>', opts)
 map('n', '<A-,>', ':BufferPrevious<CR>', opts)
-map('n', '<leader>q', ':BufferClose<CR>', opts)
+map('n', '<A-q>', ':BufferClose<CR>', opts)
 
 -- panels motion
 map('n', '<C-h>', ':wincmd h<CR>', opts)
