@@ -11,26 +11,9 @@
 --     \__\/       \__\/         \__\/         \__\/         \__\/         \__\/   
 
 local fn = vim.fn
-<<<<<<< HEAD
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
-=======
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
->>>>>>> 72fa092 (packer auto install added)
 end
 
 return require('packer').startup(function()
@@ -39,9 +22,6 @@ return require('packer').startup(function()
     use 'morhetz/gruvbox'
     use 'EdenEast/nightfox.nvim'
     use 'folke/tokyonight.nvim'
-
-	-- Nvim-Tree
-	--use {'kyazdani42/nvim-tree.lua',requires = {'kyazdani42/nvim-web-devicons'},tag = 'nightly'}
 
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -67,8 +47,10 @@ return require('packer').startup(function()
   	use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
 
+
 	-- lua line
     use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
+
 
 	-- Buffers
     use {
@@ -114,7 +96,6 @@ return require('packer').startup(function()
 
     -- tree-sitter
     use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end}
-    -- use 'nvim-treesitter/highlight.lua'
     use 'p00f/nvim-ts-rainbow'
 
 
@@ -156,7 +137,12 @@ return require('packer').startup(function()
 
     --folding
     use { 'anuvyklack/pretty-fold.nvim', requires = 'anuvyklack/nvim-keymap-amend', config = function() require('pretty-fold').setup() require('pretty-fold.preview').setup() end}
-
+    use { 'anuvyklack/fold-preview.nvim',
+       requires = 'anuvyklack/keymap-amend.nvim',
+       config = function()
+          require('fold-preview').setup()
+       end
+    }
 
     -- scroll
     use'yuttie/comfortable-motion.vim'
