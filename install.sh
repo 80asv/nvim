@@ -24,7 +24,8 @@ changedirname() {
 clonerepo() {
   echo "Cloning repo..."
   git clone https://github.com/80asv/nvim.git ~/.config/nvim
-  nvim +PackerSync
+  echo "The repo has been cloned!"
+  nvim
 }
 
 which nvim >/dev/null && echo "Neovim is installed" || warnnvim
