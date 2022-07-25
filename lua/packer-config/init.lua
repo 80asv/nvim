@@ -147,12 +147,17 @@ return require('packer').startup(function()
 
 
     --folding
-    use { 'anuvyklack/pretty-fold.nvim', requires = 'anuvyklack/nvim-keymap-amend', config = function() require('pretty-fold').setup() require('pretty-fold.preview').setup() end}
+    use{ 'anuvyklack/pretty-fold.nvim',
+        config = function()
+            require('pretty-fold').setup()
+        end
+    }
+
     use { 'anuvyklack/fold-preview.nvim',
-       requires = 'anuvyklack/keymap-amend.nvim',
-       config = function()
-          require('fold-preview').setup()
-       end
+        requires = 'anuvyklack/keymap-amend.nvim',
+        config = function()
+            require('fold-preview').setup()
+        end
     }
 
     -- scroll
