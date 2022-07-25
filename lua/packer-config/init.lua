@@ -11,6 +11,7 @@
 --     \__\/       \__\/         \__\/         \__\/         \__\/         \__\/   
 
 local fn = vim.fn
+<<<<<<< HEAD
 
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
@@ -25,6 +26,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
   }
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
+=======
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+>>>>>>> 72fa092 (packer auto install added)
 end
 
 return require('packer').startup(function()
@@ -149,11 +155,15 @@ return require('packer').startup(function()
 
 
     --folding
-    -- use { 'anuvyklack/pretty-fold.nvim', requires = 'anuvyklack/nvim-keymap-amend', config = function() require('pretty-fold').setup() require('pretty-fold.preview').setup() end}
+    use { 'anuvyklack/pretty-fold.nvim', requires = 'anuvyklack/nvim-keymap-amend', config = function() require('pretty-fold').setup() require('pretty-fold.preview').setup() end}
 
 
     -- scroll
     use'yuttie/comfortable-motion.vim'
+    
+    if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
 
 

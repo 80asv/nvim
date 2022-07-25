@@ -11,10 +11,11 @@
 --     \__\/         \__\/         \__\/         \__\/         \__\/         \__\/    
 
 
+require('packer-config')
+
 require('settings')
 require('tree-config')
 require('keymaps')
-require('packer-config')
 require('lsp-config.language-servers')
 require('lsp-config.nvim-cmp')
 require('lua-line')
