@@ -1,5 +1,7 @@
 # nvim
 
+![nvim](https://github.com/80asv/nvim/blob/main/assets/nvim.png)
+
 ## Install
 
 ```
