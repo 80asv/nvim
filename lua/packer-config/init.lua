@@ -57,7 +57,7 @@ return require('packer').startup(function()
   	use 'hrsh7th/cmp-vsnip'
   	use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
-
+    use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }
 
 	-- lua line
     use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
@@ -108,7 +108,6 @@ return require('packer').startup(function()
     -- tree-sitter
     use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end}
     use 'p00f/nvim-ts-rainbow'
-
 
     -- toggle term
     use 'akinsho/toggleterm.nvim'

@@ -66,6 +66,7 @@ map('n', '<C-p>', ':Dashboard<CR>', opts)
 
 
 --clipboard
+--Install xclip for shared clipboard 
 map('n', '<leader>y', ':"*y<CR>', opts)
 map('n', '<leader>p', ':"*p<CR>', opts)
 
