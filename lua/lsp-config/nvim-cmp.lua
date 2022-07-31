@@ -3,6 +3,7 @@ vim.g.completeopt="menu,menuone,noselect,noinsert"
 -- luasnip setup
 require("nvim-lsp-installer").setup {}
 require('luasnip.loaders.from_vscode').lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 local luasnip = require 'luasnip'
 local lspkind = require('lspkind')
 
@@ -44,11 +45,10 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'vsnip' }
+    { name = 'vsnip' },
+    { name = 'emmet_ls' },
+    { name = 'cmp_tabnine' }
   },
-}
-
-cmp.setup {
   formatting = {
     format = lspkind.cmp_format({
 	with_text = false,   
@@ -65,14 +65,6 @@ cmp.setup {
 }
 
 
-
-require'cmp'.setup {
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' }
-  }
-}
-
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -81,50 +73,4 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
 }
-
-
-local navic = require("nvim-navic")
-
-require("lspconfig").clangd.setup {
-    on_attach = function(client, bufnr)
-        navic.attach(client, bufnr)
-    end
-}
-
-
-navic.setup {
-    icons = {
-        File          = " ",
-        Module        = " ",
-        Namespace     = " ",
-        Package       = " ",
-        Class         = " ",
-        Method        = " ",
-        Property      = " ",
-        Field         = " ",
-        Constructor   = " ",
-        Enum          = "練",
-        Interface     = "練",
-        Function      = " ",
-        Variable      = " ",
-        Constant      = " ",
-        String        = " ",
-        Number        = " ",
-        Boolean       = "◩ ",
-        Array         = " ",
-        Object        = " ",
-        Key           = " ",
-        Null          = "ﳠ ",
-        EnumMember    = " ",
-        Struct        = " ",
-        Event         = " ",
-        Operator      = " ",
-        TypeParameter = " ",
-    },
-    highlight = false,
-    separator = " > ",
-    depth_limit = 0,
-    depth_limit_indicator = "..",
-}
-
 

@@ -37,4 +37,3 @@ vim.cmd("set nofoldenable")
 vim.g.comfortable_motion_scroll_up_key = "k"
 vim.g.comfortable_motion_scroll_down_key = "j"
 vim.g.vsnip_snippet_dir = "~/.config/nvim/lua/vsnip/"
-

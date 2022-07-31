@@ -16,6 +16,8 @@ local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
 vim.g.mapleader = ' '
 
+-- neovim config files
+map('n', '<leader>cc', ':edit ~/.config/nvim/<CR>', opts)
 
 -- tree-config keymaps
 map('n', '<leader>e', ':Neotree toggle<CR>', opts)
@@ -71,7 +73,7 @@ map('n', '<leader>y', ':"*y<CR>', opts)
 map('n', '<leader>p', ':"*p<CR>', opts)
 
 
--- map('n', 'C-f>', ':call comfortable_motion#flick(200)<CR>', opts)
--- map('n', 'C-b>', ':call comfortable_motion#flick(-200)<CR>', opts)
+map('n', '<C-j>', ':call comfortable_motion#flick(200)<CR>', opts)
+map('n', '<C-k>', ':call comfortable_motion#flick(-200)<CR>', opts)
 
 

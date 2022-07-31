@@ -27,8 +27,17 @@ local db = require('dashboard')
 --    [[                               ]],
 --    [[                               ]],
 --}
+--
+
 
 db.custom_header = {
+[[                                      ]],
+[[                                      ]],
+[[                                      ]],
+[[                                      ]],
+[[                                      ]],
+[[                                      ]],
+[[                                      ]],
 [[                                      ]],
 [[                                      ]],
 [[                                      ]],
@@ -43,15 +52,15 @@ db.custom_header = {
 [[                                      ]],
 [[                                      ]],
 }
---
+
 
 db.custom_center = {
-      {icon = '﬒  ', desc = 'New File                                ', action='enew', shortcut = 'SPC n  '},
-      {icon = '  ', desc = 'Find  File                              ', action='Telescope find_files', shortcut = 'SPC f f'},
-      {icon = '  ', desc = 'Find word                               ', action='Telescope live_grep', shortcut = 'SPC f b'},
-      {icon = '  ', desc = 'Projects                                ', action='edit /home/andres/Documentos', shortcut = 'SPC f w'},
-      {icon = '  ', desc = 'Packer config                           ', action='edit ~/.config/nvim/lua/packer-config/init.lua', shortcut = 'SPC f h'},
-      {icon = '  ', desc = 'Config                                  ', action='edit ~/.config/nvim', shortcut = 'SPC f d'},
+      {icon = '   ', desc = 'New File                                ', action='enew', shortcut = 'SPC n  '},
+      {icon = '  ', desc = 'Find  File                              ', action='Telescope find_files', shortcut = 'SPC ff'},
+      {icon = '  ', desc = 'Find word                               ', action='Telescope live_grep', shortcut = 'SPC fw'},
+      {icon = '  ', desc = 'Projects                                ', action='edit /home/andres/Documentos', shortcut = 'SPC x'},
+      {icon = '  ', desc = 'Packer config                           ', action='edit ~/.config/nvim/lua/packer-config/init.lua', shortcut = 'SPC fh'},
+      {icon = '  ', desc = 'Config                                  ', action='edit ~/.config/nvim', shortcut = 'SPC fd'},
     }                                            
 
 
@@ -60,6 +69,6 @@ db.custom_footer = {
     '',
     '',
     '',
-    'neovim 0.7.0 - Andres Sanabria'
+    'Neovim 0.8.0 <-   -> Andres Sanabria'
 }
 

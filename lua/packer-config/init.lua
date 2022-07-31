@@ -1,14 +1,14 @@
 
---     /  /\       /  /\         /  /\         /__/|         /  /\         /  /\    
---    /  /::\     /  /::\       /  /:/        |  |:|        /  /:/_       /  /::\   
---   /  /:/\:\   /  /:/\:\     /  /:/         |  |:|       /  /:/ /\     /  /:/\:\  
---  /  /:/~/:/  /  /:/~/::\   /  /:/  ___   __|  |:|      /  /:/ /:/_   /  /:/~/:/  
+--     /  /\       /  /\         /  /\         /__/|         /  /\         /  /\
+--    /  /::\     /  /::\       /  /:/        |  |:|        /  /:/_       /  /::\
+--   /  /:/\:\   /  /:/\:\     /  /:/         |  |:|       /  /:/ /\     /  /:/\:\
+--  /  /:/~/:/  /  /:/~/::\   /  /:/  ___   __|  |:|      /  /:/ /:/_   /  /:/~/:/
 -- /__/:/ /:/  /__/:/ /:/\:\ /__/:/  /  /\ /__/\_|:|____ /__/:/ /:/ /\ /__/:/ /:/___
 -- \  \:\/:/   \  \:\/:/__\/ \  \:\ /  /:/ \  \:\/:::::/ \  \:\/:/ /:/ \  \:\/:::::/
---  \  \::/     \  \::/       \  \:\  /:/   \  \::/~~~~   \  \::/ /:/   \  \::/~~~~ 
---   \  \:\      \  \:\        \  \:\/:/     \  \:\        \  \:\/:/     \  \:\     
---    \  \:\      \  \:\        \  \::/       \  \:\        \  \::/       \  \:\    
---     \__\/       \__\/         \__\/         \__\/         \__\/         \__\/   
+--  \  \::/     \  \::/       \  \:\  /:/   \  \::/~~~~   \  \::/ /:/   \  \::/~~~~
+--   \  \:\      \  \:\        \  \:\/:/     \  \:\        \  \:\/:/     \  \:\
+--    \  \:\      \  \:\        \  \::/       \  \:\        \  \::/       \  \:\
+--     \__\/       \__\/         \__\/         \__\/         \__\/         \__\/
 
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -30,10 +30,18 @@ vim.cmd([[
 return require('packer').startup(function()
 
 	use 'wbthomason/packer.nvim'
+
+    -- Themes
     use 'morhetz/gruvbox'
     use 'EdenEast/nightfox.nvim'
     use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
+    use 'frenzyexists/aquarium-vim'
+    use 'tiagovla/tokyodark.nvim'
+    use 'ayu-theme/ayu-vim'
 
+
+    -- neo-tree
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -57,7 +65,9 @@ return require('packer').startup(function()
   	use 'hrsh7th/cmp-vsnip'
   	use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
-    use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }
+
+    -- tabnine
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
 	-- lua line
     use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
@@ -162,6 +172,11 @@ return require('packer').startup(function()
     -- scroll
     use'yuttie/comfortable-motion.vim'
     
+
+    -- gps
+    use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }
+
+
     if packer_bootstrap then
     require('packer').sync()
   end
