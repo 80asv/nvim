@@ -40,4 +40,3 @@ require'lspsaga'.setup {
     server_filetype_map = {},
     diagnostic_prefix_format = "%d. ",
 }
-

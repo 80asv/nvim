@@ -7,9 +7,33 @@ require("luasnip.loaders.from_snipmate").lazy_load()
 local luasnip = require 'luasnip'
 local lspkind = require('lspkind')
 
+
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
+  window = {
+    completion = {
+      border = border "CmpBorder",
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = border "CmpDocBorder",
+    },
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -45,9 +69,10 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'nvim_lua' },
     { name = 'vsnip' },
     { name = 'emmet_ls' },
-    { name = 'cmp_tabnine' }
+    -- { name = 'cmp_tabnine' }
   },
   formatting = {
     format = lspkind.cmp_format({
